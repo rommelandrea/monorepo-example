@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "proxy",
+  "name": "posts",
   "description": "This project was bootstrapped with Fastify-CLI.",
   "version": "1.0.0",
   "main": "app.js",
@@ -10,21 +10,21 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "test": "node --test test/**/*.test.js",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "start": "fastify start -p 3001 -l info app.js",
+    "dev": "fastify start -w -p 3001 -l info -P app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@fastify/autoload": "^5.0.0",
-    "@fastify/http-proxy": "^9.5.0",
     "@fastify/sensible": "^5.0.0",
     "@fastify/swagger": "^8.14.0",
     "@scalar/fastify-api-reference": "^1.23.5",
     "fastify": "^4.26.1",
     "fastify-cli": "^6.1.1",
-    "fastify-plugin": "^4.0.0"
+    "fastify-plugin": "^4.0.0",
+    "proxy": "^2.1.1"
   },
   "devDependencies": {
     "@rommelandrea/eslint-config": "workspace:*",
