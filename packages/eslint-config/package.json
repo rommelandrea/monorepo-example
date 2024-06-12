@@ -1,0 +1,22 @@
+{
+  "name": "@rommelandrea/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "library.js"
+  ],
+  "description": "ESLint configuration for my projects",
+  "keywords": [],
+  "author": "Andrea Romanello (rommelandrea@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "dependencies": {
+    "eslint-config-turbo": "^2.0.3"
+  }
+}

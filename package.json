@@ -1,0 +1,23 @@
+{
+  "name": "@rommelandrea/backend",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Andrea Romanello aka rommelandrea",
+  "license": "MIT",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rommelandrea/eslint-config": "workspace:*",
+    "turbo": "^2.0.3"
+  },
+  "packageManager": "pnpm@9.2.0"
+}
