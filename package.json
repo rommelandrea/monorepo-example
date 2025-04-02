@@ -1,0 +1,17 @@
+{
+  "name": "demo-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm --parallel --stream -r run dev",
+    "start": "pnpm --parallel --stream -r run start"
+  },
+  "keywords": [],
+  "author": "Andrea Romanello aka rommelandrea",
+  "license": "",
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
