@@ -2,14 +2,14 @@
 CREATE EXTENSION "uuid-ossp";
 CREATE EXTENSION "pgcrypto";
 
-CREATE DATABASE carts;
-CREATE DATABASE payments;
-CREATE DATABASE products;
-CREATE DATABASE orders;
-CREATE DATABASE users;
+-- CREATE DATABASE bomberlab_carts;
+-- CREATE DATABASE bomberlab_payments;
+-- CREATE DATABASE bomberlab_products;
+-- CREATE DATABASE bomberlab_orders;
+-- CREATE DATABASE bomberlab_users;
 
-\c users;
-CREATE TABLE users (
+\c bomberlab_users;
+CREATE TABLE bomberlab_users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(50) UNIQUE NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
@@ -18,8 +18,8 @@ CREATE TABLE users (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-\c carts;
-CREATE TABLE carts (
+\c bomberlab_carts;
+CREATE TABLE bomberlab_carts (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL,
   items JSONB DEFAULT '[]',
@@ -28,10 +28,10 @@ CREATE TABLE carts (
 );
 
 -- Create index for faster JSON operations
-CREATE INDEX idx_carts_items ON carts USING GIN (items);
+CREATE INDEX idx_bomberlab_carts_items ON carts USING GIN (items);
 
-\c products;
-CREATE TABLE products (
+\c bomberlab_products;
+CREATE TABLE bomberlab_products (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   description TEXT,
@@ -41,8 +41,8 @@ CREATE TABLE products (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-\c orders;
-CREATE TABLE orders (
+\c bomberlab_orders;
+CREATE TABLE bomberlab_orders (
   id SERIAL PRIMARY KEY,
   user_id INTEGER NOT NULL,
   items JSON NOT NULL,
@@ -52,5 +52,5 @@ CREATE TABLE orders (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 -- Create index for faster lookups
-CREATE INDEX idx_orders_user_id ON orders (user_id);
-CREATE INDEX idx_orders_status ON orders (status);
+CREATE INDEX idx_bomberlab_orders_user_id ON bomberlab_orders (user_id);
+CREATE INDEX idx_bomberlab_orders_status ON bomberlab_orders (status);
