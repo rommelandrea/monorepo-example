@@ -1,0 +1,20 @@
+---
+applications:
+- name: bomberlab-be-orders
+  memory: 512M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack/releases/download/v1.8.36/nodejs-buildpack-cflinuxfs4-v1.8.36.zip
+  stack: cflinuxfs4
+  routes:
+    - route: bomberlab-poc.cf05.cloudsome.io/api/v1/orders
+  disk_quota: 2G
+  env:
+    NODE_ENV: development
+    DB_HOST: aclambda-postgresgpdb.c95wa1wdfnuh.eu-west-1.rds.amazonaws.com
+    DB_PORT: 5432
+    DB_USER: bomberlab_staging
+    DB_PASSWORD: b3QdrCxaMAxN8_FVzAx
+    DATABASE: bomberlab_orders
+    RABBITMQ_URL: "amqp://bomberlab:WNef9KjA.w8wPQtjbEg@aclambda-k8s-02-a-6b59a9d508e1d665.elb.eu-west-1.amazonaws.com:30236"
+    RABBIT_EXCHANGE_NAME: demo_topic_exchange
+
