@@ -32,5 +32,8 @@
   "devDependencies": {
     "c8": "^10.1.2"
   },
-  "packageManager": "pnpm@10.7.0"
+  "packageManager": "pnpm@10.7.0",
+  "engines": {
+    "node": "22.x"
+  }
 }
